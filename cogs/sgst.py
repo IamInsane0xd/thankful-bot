@@ -17,7 +17,10 @@ class Sgst(commands.Cog):
 
         if ctx.message.channel.id == 732713710115618866:
             if type == "server" or type == "bot":
-                if sgst != None
+                if sgst == None
+                    await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
+
+                else:
                     if type == 'server':
                         channel = get(ctx.message.guild.channels, name = 'server-suggestions')
 
@@ -27,10 +30,6 @@ class Sgst(commands.Cog):
                         channel = get(ctx.message.guild.channels, name = 'bot-suggestions')
 
                         await channel.send('New **server-suggestion** from *{}*:\n```{}```'.format(str(ctx.message.author)[:-5], sgst))
-
-                else:
-                    await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
-
             else:
                 await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
         else:
