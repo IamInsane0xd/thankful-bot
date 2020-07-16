@@ -67,7 +67,7 @@ async def extlist(ctx):
 @client.command()
 async def connect(ctx):
     channel = get(ctx.message.guild.channels, name = '|| 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 || #1')
-    await channel.connect
+    await channel.connect()
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
