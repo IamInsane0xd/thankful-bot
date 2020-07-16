@@ -17,7 +17,7 @@ class Mod(commands.Cog):
                     await ctx.send('Succesfuly **kicked** *{}* for reason: *{}*.'.format(member, reason))
                     channel = get(ctx.message.author.guild.channels, name = "logz")
                     await channel.send ('*{}* kicked *{}* for *{}*'.format(ctx.message.author.mention, member.mention, reason))
-                except discord.Forbidden:
+                except:
                     await ctx.send("Sorry, but I can't kick *{}*, or I dont have `kick_members` permission...".format(str(member)[:-5]))
             else:
                 await ctx.send('Please mention a user to kick.')
@@ -34,7 +34,7 @@ class Mod(commands.Cog):
                     await ctx.send('Succesfuly **banned** *{}* for reason: *{}*.'.format(member, reason))
                     channel = get(ctx.message.author.guild.channels, name = "logz")
                     await channel.send ('*{}* banned *{}* for *{}*'.format(ctx.message.author.mention, member.mention, reason))
-                except discord.Forbidden:
+                except:
                     await ctx.send("Sorry, but I can't kick *{}*, or I dont have `ban_members` permission...".format(str(member)[:-5]))
             else:
                 await ctx.send('Please mention a user to ban.')
@@ -59,7 +59,7 @@ class Mod(commands.Cog):
                             channel = get(ctx.message.author.guild.channels, name = "logz")
                             await channel.send ('*{}* unbanned *{}*'.format(ctx.message.author.mention, member))
                             return
-                        except discord.Forbidden:
+                        except:
                             await ctx.send("Sorry, but I can't kick *{}*, or I dont have `ban_members` permission...".format(str(member)[:-5]))
             else:
                 await ctx.send('Please specify a user to unban.')

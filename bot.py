@@ -64,6 +64,11 @@ async def extlist(ctx):
     else:
         await ctx.send('Sorry, {}, you dont have permissions...'.format(ctx.message.author))
 
+@client.command()
+async def connect(ctx):
+    channel = get(ctx.message.guild.channels, name = '|| 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 || #1')
+    await channel.connect
+
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension('cogs.{}'.format(filename[:-3]))
