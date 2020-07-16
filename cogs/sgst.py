@@ -17,7 +17,7 @@ class Sgst(commands.Cog):
 
         if ctx.message.channel.id == 732713710115618866:
             if type == "server" or type == "bot":
-                if sgst == None
+                if sgst == None:
                     await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
 
                 else:
