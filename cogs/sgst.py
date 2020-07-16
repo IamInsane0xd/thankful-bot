@@ -15,23 +15,26 @@ class Sgst(commands.Cog):
             print("Cant delete message >:c")
             print('')
 
-        if type == "server" or type == "bot":
-            if sgst != None
-                if type == 'server':
-                    channel = get(ctx.message.guild.channels, name = 'server-suggestions')
+        if ctx.message.channel.id == 732713710115618866:
+            if type == "server" or type == "bot":
+                if sgst != None
+                    if type == 'server':
+                        channel = get(ctx.message.guild.channels, name = 'server-suggestions')
 
-                    await channel.send('New **server-suggestion** from *{}*:\n```{}```'.format(str(ctx.message.author)[:-5], sgst))
+                        await channel.send('New **server-suggestion** from *{}*:\n```{}```'.format(str(ctx.message.author)[:-5], sgst))
 
-                if type == 'bot':
-                    channel = get(ctx.message.guild.channels, name = 'bot-suggestions')
+                    if type == 'bot':
+                        channel = get(ctx.message.guild.channels, name = 'bot-suggestions')
 
-                    await channel.send('New **server-suggestion** from *{}*:\n```{}```'.format(str(ctx.message.author)[:-5], sgst))
+                        await channel.send('New **server-suggestion** from *{}*:\n```{}```'.format(str(ctx.message.author)[:-5], sgst))
+
+                else:
+                    await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
 
             else:
                 await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
-
         else:
-            await ctx.send('Please use the correct format: `t.suggest <server|bot> <suggestion>`')
+            await ctx.send("Don't use commands in wrong channel >:c")
 
 def setup(client):
     client.add_cog(Sgst(client))
