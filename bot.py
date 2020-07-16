@@ -1,7 +1,7 @@
 import discord
 import os
 import time
-import pynacl
+import nacl
 from discord.ext import commands, tasks
 from discord.utils import get
 from itertools import cycle
