@@ -8,7 +8,7 @@ class Ping(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send('Pong! (ping is: {}ms)'.format(round(client.latency * 1000)))
+        await ctx.send('Pong! (ping is: {}ms)'.format(round(self.client.latency * 1000)))
 
 def setup(client):
     client.add_cog(Ping(client))
