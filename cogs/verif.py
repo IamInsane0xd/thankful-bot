@@ -88,5 +88,7 @@ class Verif(commands.Cog):
                     except:
                         return
 
+            await ctx.send('Done!')
+
 def setup(client):
     client.add_cog(Verif(client))
