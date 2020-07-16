@@ -88,5 +88,8 @@ class Verif(commands.Cog):
             print('')
             await ctx.send('Done!')
 
+        else:
+            await ctx.send('Sorry, {}, you dont have permissions...'.format(ctx.message.author.mention))
+
 def setup(client):
     client.add_cog(Verif(client))
