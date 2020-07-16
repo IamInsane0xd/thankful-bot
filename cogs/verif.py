@@ -57,27 +57,24 @@ class Verif(commands.Cog):
             drole3 = get(user.guild.roles, name = '-------- OTHER / EGYÉB --------')
 
             for member in guild.members:
-                if vrole in member.roles:
-                    return
-
-                elif role in member.roles:
+                if role in member.roles:
                     if drole1 not in member.roles:
                         try:
                             await member.add_roles(drole1)
                         except:
-                            return
+                            print('nothing')
 
                     if drole2 not in member.roles:
                         try:
                             await member.add_roles(drole2)
                         except:
-                            return
+                            print('nothing')
 
                     if drole3 not in member.roles:
                         try:
                             await member.add_roles(drole3)
                         except:
-                            return
+                            print('nothing')
 
                 else:
                     try:
@@ -86,8 +83,9 @@ class Verif(commands.Cog):
                         await member.remove_roles(drole2)
                         await member.remove_roles(drole3)
                     except:
-                        return
+                        print('nothing')
 
+            print('')
             await ctx.send('Done!')
 
 def setup(client):
