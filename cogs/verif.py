@@ -48,11 +48,45 @@ class Verif(commands.Cog):
     async def rolecheck(self, ctx):
         if ctx.message.author.guild_permissions.administrator:
             guild = ctx.message.guild
-            x = 0
+            user = ctx.message.author
 
-            for members in guild:
-                print(x)
-                x += 1
+            role = get(user.guild.roles, name = 'Member')
+            vrole = get(user.guild.roles, name = 'Verification')
+            drole1 = get(user.guild.roles, name = '-------- COLORS / SZÍNEK --------')
+            drole2 = get(user.guild.roles, name = '-------- ROLES / RANGOK --------')
+            drole3 = get(user.guild.roles, name = '-------- OTHER / EGYÉB --------')
+
+            for member in guild.members:
+                if vrole in member.roles:
+                    return
+
+                elif role in member.roles:
+                    if drole1 not in member.roles:
+                        try:
+                            await member.add_roles(drole1)
+                        except:
+                            return
+
+                    if drole2 not in member.roles:
+                        try:
+                            await member.add_roles(drole2)
+                        except:
+                            return
+
+                    if drole3 not in member.roles:
+                        try:
+                            await member.add_roles(drole3)
+                        except:
+                            return
+
+                else:
+                    try:
+                        await member.give_roles(vrole)
+                        await member.remove_roles(drole1)
+                        await member.remove_roles(drole2)
+                        await member.remove_roles(drole3)
+                    except:
+                        return
 
 def setup(client):
     client.add_cog(Verif(client))
