@@ -16,7 +16,7 @@ class Verif(commands.Cog):
         drole2 = get(member.guild.roles, name = '-------- ROLES / RANGOK --------')
         drole3 = get(member.guild.roles, name = '-------- OTHER / EGYÉB --------')
 
-        if role not in member.roles and vrole in member.roles and ctx.message.channel.id == 732691234988097557:
+        if role not in member.roles and vrole in member.roles:
             try:
                 await ctx.channel.purge(limit = 1)
 
@@ -40,9 +40,6 @@ class Verif(commands.Cog):
                 await member.add_roles(drole3)
             except:
                 return
-
-        elif ctx.message.channel.id == 732691234988097557:
-            await ctx.send('Wrong channel >:c')
 
     @commands.command()
     async def rolecheck(self, ctx):
