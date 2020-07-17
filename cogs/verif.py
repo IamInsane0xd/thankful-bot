@@ -11,8 +11,8 @@ class Verif(commands.Cog):
     async def verify(self, ctx):
         member = ctx.message.author
         role = get(member.guild.roles, name = 'Member')
-        vrole = get(member.guild.roles, name = 'Verification')
-        drole1 = get(member.guild.roles, name = '-------- COLORS / SZÍNEK --------')
+        vrole = get(member.guild.roles, name = '꒱꒱⛤┇Verification')
+        drole1 = get(member.guild.roles, name = '-------------- COLORS --------------')
         drole2 = get(member.guild.roles, name = '-------- ROLES / RANGOK --------')
         drole3 = get(member.guild.roles, name = '-------- OTHER / EGYÉB --------')
 
