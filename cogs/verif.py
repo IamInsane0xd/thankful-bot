@@ -39,7 +39,7 @@ class Verif(commands.Cog):
                 await member.add_roles(drole2)
                 await member.add_roles(drole3)
             except:
-                return
+                pass
 
         elif if role not in member.roles and vrole not in member.roles:
             try:
@@ -48,7 +48,7 @@ class Verif(commands.Cog):
                 await member.remove_roles(drole2)
                 await member.remove_roles(drole3)
             except:
-                return
+                pass
 
             await member.send('Semorthing went wrong with the verification, pease try again...')
 
