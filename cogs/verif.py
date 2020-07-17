@@ -41,6 +41,17 @@ class Verif(commands.Cog):
             except:
                 return
 
+        elif if role not in member.roles and vrole not in member.roles:
+            try:
+                await member.add_roles(vrole)
+                await member.remove_roles(drole1)
+                await member.remove_roles(drole2)
+                await member.remove_roles(drole3)
+            except:
+                return
+
+            await member.send('Semorthing went wrong with the verification, pease try again...')
+
     @commands.command()
     async def rolecheck(self, ctx):
         if ctx.message.author.guild_permissions.administrator:
