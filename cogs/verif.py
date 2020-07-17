@@ -70,19 +70,28 @@ class Verif(commands.Cog):
                         try:
                             await member.add_roles(drole1)
                         except:
-                            print('nothing')
+                            pass
 
                     if drole2 not in member.roles:
                         try:
                             await member.add_roles(drole2)
                         except:
-                            print('nothing')
+                            pass
 
                     if drole3 not in member.roles:
                         try:
                             await member.add_roles(drole3)
                         except:
-                            print('nothing')
+                            pass
+
+                elif drole1 in member.roles or drole2 in member.roles or drole3 in member.roles and role not in member.roles:
+                    try:
+                        await member.add_roles(role)
+                        await member.add_roles(drole1)
+                        await member.add_roles(drole2)
+                        await member.add_roles(drole3)
+                    except:
+                        pass
 
                 else:
                     try:
@@ -91,7 +100,7 @@ class Verif(commands.Cog):
                         await member.remove_roles(drole2)
                         await member.remove_roles(drole3)
                     except:
-                        print('nothing')
+                        pass
 
             print('')
             await ctx.send('Done!')
