@@ -41,7 +41,7 @@ class Verif(commands.Cog):
             except:
                 pass
 
-        elif if role not in member.roles and vrole not in member.roles:
+        elif role not in member.roles and vrole not in member.roles:
             try:
                 await member.add_roles(vrole)
                 await member.remove_roles(drole1)
