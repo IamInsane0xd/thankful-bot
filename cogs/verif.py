@@ -60,7 +60,7 @@ class Verif(commands.Cog):
 
             role = get(user.guild.roles, name = 'Member')
             vrole = get(user.guild.roles, name = 'Verification')
-            drole1 = get(user.guild.roles, name = '-------- COLORS / SZÍNEK --------')
+            drole1 = get(user.guild.roles, name = '-------------- COLORS --------------')
             drole2 = get(user.guild.roles, name = '-------- ROLES / RANGOK --------')
             drole3 = get(user.guild.roles, name = '-------- OTHER / EGYÉB --------')
 
