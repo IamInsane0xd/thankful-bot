@@ -9,7 +9,8 @@ from itertools import cycle
 client = commands.Bot(command_prefix = 't.')
 client.remove_command('help')
 status = cycle(['t. | official thankful bot',
-                't. | created by IamInsane#0001'])
+                't. | created by IamInsane#0001',
+                "t. | ť̴̐r̵̍͠ä̵̍͑p̴̈́͝#7677 is gay"])
 
 @client.event
 async def on_ready():
